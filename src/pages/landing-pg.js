@@ -11,7 +11,7 @@ function LandingPage() {
             <p className='font-jetsbrain text-[max(1vw,2vh)]'>Only frontend specific pages has been made with no backend support as of now , so authentications doesnot work. </p>
             <div className='font-jetsbrain flex flex-col items-start text-[max(1vw,2vh)]'>
               <p>For main fuction of this webapp visit these urls -</p>
-              <p>Main pomodoro timer : <a className='underline text-white text-[max(1vw,2vh)]' href='https://trackify-olive.vercel.app/pomo text-[max(1vw,2vh)]'>https://trackify-olive.vercel.app/pomo</a></p>
+              <p>Main pomodoro timer : <a className='underline text-white text-[max(1vw,2vh)]' href='https://trackify-olive.vercel.app/pomo'>https://trackify-olive.vercel.app/pomo</a></p>
               <p>Dashboard : <a className='underline text-white text-[max(1vw,2vh)]' href='https://trackify-olive.vercel.app/dashboard'>https://trackify-olive.vercel.app/dashboard</a></p>
             </div>
             <p className='font-jetsbrain text-[max(1vw,2vh)]'>Stay tuned for futher deployments...</p>
