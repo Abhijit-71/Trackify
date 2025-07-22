@@ -1,0 +1,112 @@
+
+#grad_div{
+  animation: rotate-gradient 2s linear infinite;
+}
+@keyframes rotate-gradient {
+    0% {
+      --conic-deg: 0deg;
+    }
+    100%{
+      --conic-deg:360deg;
+    }
+  }
+
+
+
+#main_pomo{
+    background-image: url("../images/Aesthetic-Minimalist-Desktop-Wallpaper.jpg");
+    background-size: cover;         /* scales image to cover entire area */
+    background-position: center;    /* centers the image */
+    background-repeat: no-repeat
+}
+
+/*.main:active{
+  height: 100vh;
+  width: 100vw;
+}*/
+
+#timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.timer-cards{
+  --fcc-flip-duration: 0.5s; /* transition duration when flip card */
+  --fcc-spacing: 1vw; /* space between unit times and separators */
+  --fcc-digit-block-width: 10vw; /* width of digit card1 */
+  --fcc-digit-block-height:16lvh; /* height of digit card, highly recommend in even number */
+  --fcc-digit-block-radius: 10px; /* border radius of digit card */
+  --fcc-digit-block-spacing: 1vw; /* space between blocks in each unit of time */
+  --fcc-digit-font-size: min(6vw,9vh); /* font size of digit */
+  --fcc-digit-color: rgba(50, 50, 50, 0.85); /* color of digit */
+  --fcc-label-font-size: min(2.5vh,2.5vw); /* font size of label1 */
+  --fcc-label-color: #ffffff; /* color of label */
+  --fcc-background:	#81e3ddfd; /* background of digit card */
+  --fcc-divider-color: rgba(146, 146, 146, 0.627); /* color of divider */
+  --fcc-divider-height: 0.5px; /* height of divider */
+  --fcc-separator-size: min(1vw,2vh); /* size of colon */
+  --fcc-separator-color: rgba(50, 50, 50, 0.85); /* color of colon */
+}
+
+@media (max-width: 800px) {
+  #time{
+    font-size: min(5vw,5vh);
+  }
+  #date{
+    font-size: min(6vw,6vh);
+  }
+}
+
+@media (max-width: 750px) {
+  .timer-cards{
+    --fcc-digit-block-height: 11vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .timer-cards{
+    --fcc-digit-block-width: 11vw; 
+    --fcc-digit-block-height: 8vh;
+    --fcc-divider-height: .2px;
+  }
+  #date{
+    font-size: min(4.8vw,4.8vh);
+  }
+  #time{
+    font-size: min(4.5vw,4.5vh);
+  }
+}
+
+
+
+/*@media (max-width: 320px) {
+  .timer-cards{
+    --fcc-digit-block-width: 20px; 
+    --fcc-digit-block-height: 50px;
+    --fcc-digit-font-size: 20px;
+    --fcc-label-font-size: 10px; 
+    --fcc-digit-block-radius: 3px;
+  }
+}*/
+
+
+#taskbar{
+  z-index: 99;
+  top: 10%;
+  right: -100%;
+  position: fixed;
+  flex-direction: column;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+#taskbar.active {
+  right: 10%;
+}

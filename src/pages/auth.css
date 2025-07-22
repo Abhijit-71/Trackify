@@ -1,0 +1,107 @@
+.main-login{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-comp{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    height: 400px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/*common*/
+
+#username , #password , #email{
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    font-size: 15px;
+    background-color: transparent;
+    border: 3px solid white;
+}
+
+#username:hover , #password:hover , #email:hover{
+    border-color: rebeccapurple;
+}
+
+#username::placeholder , #password::placeholder  , #email::placeholder {
+    color: grey;
+}
+
+
+.button_auth {
+    align-self: center;
+    background-color: wheat;
+    border: none;
+    font-size:1rem;
+    width:100%;
+    height: 38px;
+    border-radius: 10px;
+}
+
+.button_auth:hover{
+    background-color: rebeccapurple;
+    font-size: 16px; 
+}
+
+a {
+    font-size: 15px;
+}
+
+a:hover {
+    color:crimson;
+}
+
+
+
+/*
+
+register view css
+
+*/
+
+.main-register{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.register-comp{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    height: 400px;
+    background-color:whitesmoke;
+    border-radius: 20px;
+    padding: 20px;
+}

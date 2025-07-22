@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 
+//imports of pages
+
+import {Login, Register} from './pages/auth';
+import LandingPage from './pages/landing-pg';
+import Dashboard from './pages/dashboard';
+import Pomo from './pages/pomo';
+
+
+
+
+//Function for main canvas(parent of all components)
 function App() {
+  const routes = createBrowserRouter([
+    {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/pomo",
+    element: <Pomo />,
+  },
+])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={routes} />
     </div>
   );
 }
