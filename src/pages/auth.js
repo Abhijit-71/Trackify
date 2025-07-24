@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-
+const apiUrl = "https://trackify-backend-kwws.onrender.com/"
 
 
 
@@ -41,7 +41,7 @@ function Login() {
     }
     try{
         // replace the url and get the access token
-        const login = await axios.post('http://127.0.0.1:8000/api/login/' , formData);
+        const login = await axios.post(apiUrl+'api/login/' , formData);
         localStorage.setItem('tokens' , JSON.stringify(login.data));
         alert("Login Successfull !!");
         navigate("/dashboard");
@@ -122,7 +122,7 @@ function Register() {
     }
     try{
 
-        const register = await axios.post('http://127.0.0.1:8000/api/register/' , formData);
+        const register = await axios.post(apiUrl+'api/register/' , formData);
         alert(register.data.message)
         navigate("/login")
         
@@ -186,7 +186,7 @@ function Authorization() {
   //base config 
 
   const axiosInstance = axios.create({
-    baseURL: 'http://127.0.0.1:8000/api/',
+    baseURL: apiUrl+'api/',
   });
 
   const navigate = useNavigate()
@@ -206,7 +206,7 @@ function Authorization() {
         if (jwtDecode(tokens.access).exp * 1000 < Date.now()) {
           if (tokens.refresh) {
             try {
-              const response = await axios.post('http://127.0.0.1:8000/api/refreshtoken/', {
+              const response = await axios.post(apiUrl+'api/refreshtoken/', {
                 refresh: tokens.refresh,
               });
               localStorage.setItem('tokens', JSON.stringify(response.data));
@@ -243,7 +243,7 @@ function Authorization() {
       return true
     };
     if(tokens.refresh){
-      const response = await axios.post('http://127.0.0.1:8000/api/tokens.refresh/', {
+      const response = await axios.post(apiUrl+'api/tokens.refresh/', {
         refresh: tokens.refresh,
       });
       token = response.data.access;
