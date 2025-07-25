@@ -14,7 +14,7 @@ function LandingPage() {
               <p>Main pomodoro timer : <a className='underline text-white text-[max(1vw,2vh)]' href='https://trackify-olive.vercel.app/pomo'>https://trackify-olive.vercel.app/pomo</a></p>
               <p>Dashboard : <a className='underline text-white text-[max(1vw,2vh)]' href='https://trackify-olive.vercel.app/dashboard'>https://trackify-olive.vercel.app/dashboard</a></p>
             </div>
-            <p className='font-jetsbrain text-[max(1vw,2vh)]'>Stay tuned for futher deployments...</p>
+            <p className='font-jetsbrain text-[max(1vw,2vh)]'>Stay tuned for futher deployments... regards from Abhijit</p>
         </div>
       </div>
     </div>
