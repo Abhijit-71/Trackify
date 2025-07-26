@@ -1,0 +1,48 @@
+@media (max-width:640px) {
+    #panel1{
+        height:60%;
+        gap:10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    #points{
+        width: 100%;
+        gap: 10px;
+        height: 50%;
+    }
+    #piemom{
+        gap: 5px;
+    }
+    #profile{
+        height: 35%;
+        width: 100%;
+        display:grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        padding: 0;
+    }
+    #streaks{
+        height: 100%;
+        gap: 5px;
+    }
+    #heatmap{
+        height: 100%;
+        width: 100%;
+    }
+    #main{
+        gap:20px;
+        height:100vh;
+        width:100%;
+    }
+    #panel2{
+        width:100%;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    #archart{
+        width: 100%;
+    }
+    #brchart{
+        width: 100%;
+    }
+}
