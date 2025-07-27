@@ -4,11 +4,10 @@ import { useNavigate } from "react-router-dom";
 import Heatmap from "../components/heatmap";
 import { Piechart, Areachart, Barchart } from "../components/chart";
 import try_avatar from "../images/try_avatar.svg";
-import "./dashboard.css";
 import { Award, BookCheck, Flame } from "lucide-react";
+import Footer from "../components/footer";
 
 function Dashboard() {
-  //const navigate = useNavigate()
   const [user, setuser] = useState(null);
 
   const api = Authorization();
@@ -27,6 +26,10 @@ function Dashboard() {
     fetchData();
   }, []);
 
+  const pie = 2;
+  const value_heat = user?.calender;
+  const data_area = user?.data_area;
+  const data_bar = user?.data_bar;
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -36,24 +39,19 @@ function Dashboard() {
     }
   }, []);
 
-  const value_heat = user?.calender;
-  const data_area = user?.data_area;
-  const data_bar = user?.data_bar;
-  const pie = 2;
-
-  //implement calender
-
-  //JSON.stringify(user, null, 2)
   return (
-    <div className="bg-slate-800">
+    <div className="bg-muted">
       <div
-        className="flex flex-col gap-6 pl-6 pr-6 pt-3 pb-3 h-lvh w-lvw min-h-[700px] "
-        id="main"
+        id="maindash"
+        className="grid grid-rows-2 sm:grid-rows-5 gap-2 sm:h-svh h-[1300px] p-4"
       >
-        <div className="h-3/5 flex flex-row gap-6 " id="panel1">
+        <div
+          id="panelone"
+          className="w-full sm:row-span-3 grid-rows-3 grid sm:grid-cols-3 gap-2"
+        >
           <div
-            className="h-full w-1/3 min-w-[0px] rounded-xl backdrop-blur-xl backdrop-saturate-100 bg-white/20 border border-white border-opacity-40 shadow-2xl shadow-black flex items-center justify-center gap-2 flex-col p-2"
-            id="profile"
+            id="profiles"
+            className="row-span-1 sm:row-span-3 bg-card flex items-center justify-center gap-2 flex-col p-2 rounded-xl"
           >
             <div className="flex justify-center w-full items-center flex-col">
               <img
@@ -87,15 +85,18 @@ function Dashboard() {
               </p>
             </div>
           </div>
-          <div className="h-full w-2/3 flex flex-col gap-3" id="points">
-            <div className="h-2/3 w-full flex flex-row gap-3" id="piemom">
-              <div className="h-full w-1/3 flex flex-col gap-3" id="streaks">
-                <div className="h-1/2 w-full rounded-xl backdrop-blur-md backdrop-saturate-100 bg-white/20 border border-white border-opacity-40 shadow-2xl shadow-black flex justify-center gap-[1vh] items-center flex-col p-2 text-white">
-                  <h1 className="font-degular text-[3.5vw] sm:text-[2vw] flex items-center gap-[4px]">
+          <div className="row-span-2 sm:row-span-3 sm:col-span-2 grid grid-rows-5 gap-2">
+            <div className="row-span-3 grid grid-cols-5 gap-2">
+              <div className="col-span-2 grid grid-rows-2 gap-2">
+                <div
+                  id="streaks"
+                  className="bg-card flex justify-evenly items-center flex-col p-2 rounded-xl"
+                >
+                  <h1 className="font-degular text-white text-[3.5vw] sm:text-[2vw] flex items-center gap-[4px]">
                     Streaks
                     <Flame className="size-[3.5vw] sm:size-[2vw]" />
                   </h1>
-                  <div className="grid grid-cols-2 gap-[2vw] font-jetsbrain text-[2vw] sm:text-[1.2vw]">
+                  <div className="grid text-gray-400 grid-cols-2 gap-[3vw] font-jetsbrain text-[2.5vw] sm:text-[1.2vw]">
                     <div className="flex flex-col">
                       <h1>Current</h1>
                       <p>{user?.streak}</p>
@@ -106,8 +107,11 @@ function Dashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white h-1/2 w-full rounded-xl backdrop-blur-md backdrop-saturate-100/20 border border-white border-opacity-40 shadow-2xl shadow-black flex justify-center gap-[1.5vh] items-center flex-col p-2 text-white">
-                  <h1 className="font-degular text-[3.5vw] sm:text-[2vw] flex items-center gap-[4px]">
+                <div
+                  id="badges"
+                  className="bg-card flex justify-evenly items-center flex-col p-2 rounded-xl"
+                >
+                  <h1 className="font-degular text-white text-[3.5vw] sm:text-[2vw] flex items-center gap-[4px]">
                     Badges
                     <Award className="size-[3.5vw] sm:size-[2vw]" />
                   </h1>
@@ -116,61 +120,46 @@ function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div
-                className="backdrop-blur-md backdrop-saturate-100 bg-white/20 border border-white border-opacity-40 h-full w-2/3 rounded-xl shadow-2xl shadow-black text-white p-[2vw]"
-                id="piechart"
-              >
-                <div className="h-1/6 w-full flex items-center justify-center">
-                  <h1 className="font-degular text-[3.5vw] sm:text-[2vw] flex items-center gap-[4px]">
+              <div className="col-span-3 bg-card p-2 pt-1 sm:pb-6 flex flex-col justify-evenly items-center rounded-xl">
+                <div className="flex items-center justify-center">
+                  <h1 className="font-degular text-accent-foreground text-[3.7vw] sm:text-[2vw] flex items-center gap-[4px]">
                     Tasks <BookCheck className="size-[3.5vw] sm:size-[2vw]" />
                   </h1>
                 </div>
-                <div className="h-5/6 w-full flex flex-row gap-[3vw]  pt-0 justify-around items-center">
+                <div className="flex sm:flex-row flex-col gap-[3.5vw] md:gap-[10vw]  pt-0 justify-around items-center">
                   <Piechart />
-                  <div className="h-full w-1/3 flex items-center justify-around flex-col">
-                    <div
-                      className="p-1 w-3/4 flex items-center justify-center text-[min(2vw,1.15rem)] rounded-xl font-semibold"
-                      style={{ backgroundColor: "#E38627" }}
-                    >
-                      Easy - {pie}{" "}
+                  <div className="flex items-center gap-[10px] text-[2.5vw] sm:text-[1.1vw] font-semibold justify-around sm:flex-col">
+                    <div className="p-2 rounded-xl bg-[#E38627]">
+                      Easy - {pie}
                     </div>
-                    <div
-                      className="p-1 w-3/4 flex items-center justify-center text-[min(2vw,1.15rem)] rounded-xl font-semibold"
-                      style={{ backgroundColor: "#C13C37" }}
-                    >
-                      Med. - {pie}{" "}
+                    <div className="p-2 rounded-xl bg-[#C13C37]">
+                      Med. - {pie}
                     </div>
-                    <div
-                      className="p-1 w-3/4 flex items-center justify-center rounded-xl text-[min(2vw,1.15rem)] font-semibold"
-                      style={{ backgroundColor: "#6A2135" }}
-                    >
-                      Hard - {pie}{" "}
+                    <div className="p-2 rounded-xl bg-[#6A2135]">
+                      Hard - {pie}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              className="h-1/3 backdrop-blur-md backdrop-saturate-100 bg-white/20 border border-white border-opacity-40  rounded-xl flex justify-evenly shadow-2xl shadow-black"
-              id="heatmap"
+              id="heatman"
+              className="row-span-2 h-full bg-card flex flex-col justify-center p-2 items-center rounded-xl"
             >
+              <div className="font-degular w-[80vw] sm:w-[55vw] text-accent-foreground text-[3.5vw] sm:text-[1.5vw] text-left">
+                <h1>Year at a Glance</h1>
+              </div>
               <div
                 ref={scrollRef}
-                className="h-full w-90 flex items-center pb-2 overflow-auto"
+                className="w-[80vw] sm:w-[55vw] flex items-center pb-1 overflow-auto"
               >
-                <Heatmap values={value_heat} />
+                <Heatmap />
               </div>
             </div>
           </div>
         </div>
-        <div
-          className="h-2/5 flex min-h-36 flex-row items-center justify-around gap-6"
-          id="panel2"
-        >
-          <div
-            className="rounded-xl w-1/2 flex justify-around h-full backdrop-blur-md backdrop-saturate-100 bg-white/20 border border-white border-opacity-40 shadow-2xl shadow-black items-start flex-col pt-3"
-            id="archart"
-          >
+        <div id="paneltwo" className="sm:row-span-2 grid sm:grid-cols-2 gap-2">
+          <div className="bg-card rounded-xl flex justify-around items-start flex-col pt-3">
             <div className="text-white flex flex-col items-start ml-[10%]">
               <h1 className="font-degular text-[4vw] sm:text-[1.5vw]">
                 Weekly Wins
@@ -181,10 +170,7 @@ function Dashboard() {
             </div>
             <Areachart data={data_area} />
           </div>
-          <div
-            className="rounded-xl w-1/2 flex justify-around h-full backdrop-blur-md backdrop-saturate-100 bg-white/20 border border-white border-opacity-40 shadow-2xl shadow-black items-start flex-col pt-3"
-            id="brchart"
-          >
+          <div className="bg-card rounded-xl flex justify-around items-start flex-col pt-3">
             <div className="text-white flex flex-col items-start ml-[10%]">
               <h1 className="font-degular text-[4vw] sm:text-[1.5vw]">
                 Monthly Highlights
@@ -197,6 +183,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -10,7 +10,6 @@ import { LoginForm } from './components/loginform';
 import Regform from './components/regform';
 
 
-
 //Function for main canvas(parent of all components)
 function App() {
   const routes = createBrowserRouter([

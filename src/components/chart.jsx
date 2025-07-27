@@ -25,7 +25,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 function Piechart() {
   return (
-    <div className='w-2/3 h-4/5'>
+    <div className='size-[25vw] sm:size-[20vw] md:size-[11vw]'>
       <PieChart
         className='w-full h-full'
         data={[
