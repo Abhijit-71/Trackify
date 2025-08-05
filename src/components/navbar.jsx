@@ -36,7 +36,7 @@ const NavigationSheet = () => {
 
 const NavMenu = (NavigationMenuProps) => (
   <NavigationMenu {...NavigationMenuProps}>
-    <NavigationMenuList className="text-white gap-6 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
+    <NavigationMenuList className="text-foreground gap-6 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
           <a href="#">Home</a>

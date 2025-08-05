@@ -3,9 +3,9 @@ import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 function LandingPage() {
   return (
-    <div className=''>
+    <div className='h-lvh w-lvw bg-background'>
       <Navbar/>
-      <div className=' h-lvh w-lvw bg-slate-500'>
+      <div className='h-svh'>
         <div className='p-8 mt-24 flex justify-center items-center flex-col gap-8'>
             <h1 className='font-degular text-[max(3vw,4vh)]'>This is the pre alpha build of Trackify webapp</h1>
             <p className='font-jetsbrain text-[max(1vw,2vh)]'>Only frontend specific pages has been made with no backend support as of now , so authentications doesnot work. </p>
