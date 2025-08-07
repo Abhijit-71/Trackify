@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("tokens") || "");
 
-  const apiUrl = "http://abhijit71.pythonanywhere.com/"
+  const apiUrl = "https://abhijit71.pythonanywhere.com/"
 
 
   const axiosInstance = axios.create({
