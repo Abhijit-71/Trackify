@@ -25,7 +25,7 @@ export function LoginForm() {
     event.preventDefault();
     try {
       const login = await axios.post(
-        "http://abhijit71.pythonanywhere.com/api/login/",
+        "https://abhijit71.pythonanywhere.com/api/login/",
         formData
       );
       localStorage.setItem("tokens", JSON.stringify(login.data));
@@ -43,7 +43,7 @@ export function LoginForm() {
   const oauthlogin = async (credentialResponse) => {
     try {
       const res = await axios.get(
-        "http://abhijit71.pythonanywhere.com/api/google-login-callback/",
+        "https://abhijit71.pythonanywhere.com/api/google-login-callback/",
         {
           params: { code: credentialResponse.credential },
         }
