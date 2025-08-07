@@ -128,7 +128,7 @@ function Dashboard() {
             </div>
           </header>
           <div className="bg-background">
-            <AuthWatcher />
+            
             <div
               id="maindash"
               className="grid grid-rows-2 sm:grid-rows-5 gap-2 sm:h-svh h-[1300px] p-4"

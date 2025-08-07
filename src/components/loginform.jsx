@@ -9,7 +9,7 @@ import animationData from "../images/Login.json";
 import axios from "axios";
 import { AlertError, AlertSuccess } from "./alerts";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export function LoginForm() {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -49,8 +49,9 @@ export function LoginForm() {
         }
       );
       setSuccess(true);
-      navigate("/dashboard");
       localStorage.setItem("tokens", JSON.stringify(res.data));
+      <Navigate to="/dashboard"/>
+      
     } catch (err) {
       setSuccess(false);
     }
