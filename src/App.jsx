@@ -8,6 +8,7 @@ import {
 import AuthProvider from "./pages/authContext";
 import { useAuth } from "./pages/authContext";
 import { PublicRoute } from "./pages/authContext";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 //imports of pages
 
 import LandingPage from "./pages/landing-pg";
@@ -38,7 +39,9 @@ function App() {
       path: "/login",
       element: (
         <PublicRoute>
-          <LoginForm />
+          <GoogleOAuthProvider clientId="450008098766-r11fmpandh7covqshfka9jju62cmtsok.apps.googleusercontent.com">
+            <LoginForm />
+          </GoogleOAuthProvider>
         </PublicRoute>
       ),
     },
@@ -46,7 +49,9 @@ function App() {
       path: "/register",
       element: (
         <PublicRoute>
-          <Regform />
+          <GoogleOAuthProvider clientId="450008098766-r11fmpandh7covqshfka9jju62cmtsok.apps.googleusercontent.com">
+            <Regform />
+          </GoogleOAuthProvider>
         </PublicRoute>
       ),
     },
