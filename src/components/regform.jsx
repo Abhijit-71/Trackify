@@ -35,7 +35,7 @@ function Regform() {
     }
     try {
       const register = await axios.post(
-        "http://127.0.0.1:8000/api/register/",
+        "http://abhijit71.pythonanywhere.com/api/register/",
         formData
       );
       setMessage(register.data.message);
@@ -57,7 +57,7 @@ function Regform() {
   const oauthlogin = async (credentialResponse) => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/google-login-callback/",
+        "http://abhijit71.pythonanywhere.com/api/google-login-callback/",
         {
           params: { code: credentialResponse.credential },
         }
