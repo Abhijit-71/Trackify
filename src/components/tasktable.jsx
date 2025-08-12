@@ -60,10 +60,10 @@ const columns = [
       const status = row.getValue("status");
       const color =
         status === "completed"
-          ? "text-green-600"
+          ? "text-green-400"
           : status === "in progress"
-          ? "text-yellow-600"
-          : "text-red-600";
+          ? "text-yellow-400"
+          : "text-red-400";
       return (
         <div className={`capitalize font-semibold ${color}`}>{status}</div>
       );
@@ -445,7 +445,7 @@ export function TaskManagerForm({ onAdd }) {
         >
           Allot Pomodoro
         </label>
-        <input
+        <Input
           id="pomodoro"
           type="number"
           min={1}
@@ -457,10 +457,7 @@ export function TaskManagerForm({ onAdd }) {
               setPomodoroCount(value);
             }
           }}
-          className={cn(
-            "w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm mt-2 mb-2",
-            "placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-muted-foreground"
-          )}
+          className="mt-2 mb-2"
           placeholder="1–12"
         />
       </div>
@@ -481,7 +478,7 @@ export function TaskManagerForm({ onAdd }) {
           required
           className={cn(
             "w-full rounded-md border border-input  px-3 py-2 text-sm mt-2 mb-2",
-            "placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            "placeholder:text-muted-foreground focus:outline-none"
           )}
         />
       </div>
@@ -495,6 +492,14 @@ export function TaskManagerForm({ onAdd }) {
 
 export function TablePomo() {
   const columns = [
+    {
+      accessorKey: "check",
+      header: "Select",
+      cell: ({ row }) => (
+        <input type="checkbox" className="data-[state=checked]:bg-blue-300"/>
+      ),
+      size: 100,
+    },
     {
       accessorKey: "title",
       header: "Task",

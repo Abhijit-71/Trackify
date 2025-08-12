@@ -67,13 +67,14 @@ function App() {
       path: "/pomo",
       element: <Pomo />,
     },
-    {
-      element: <PrivateRoute />,
-      children: [
-        {
+     {
           path: "/dashboard",
           element: <Dashboard />,
         },
+    {
+      element: <PrivateRoute />,
+      children: [
+       
       ],
     },
   ]);

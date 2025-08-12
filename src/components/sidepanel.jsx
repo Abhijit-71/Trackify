@@ -92,7 +92,7 @@ function NavUser() {
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg bg-accent-foreground text-accent"
+            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg bg-card-foreground text-accent"
             side={isMobile ? "bottom" : "right"}
             align="end"
             sideOffset={4}
@@ -147,21 +147,12 @@ const navMain = [
     icon: SquareTerminal,
     isActive: true,
     items: [
-      { title: "History", url: "#" },
-      { title: "Starred", url: "#" },
-      { title: "Settings", url: "#" },
+      { title: "Pomodoro", url: "#" },
+      { title: "Task Manager", url: "#" },
+      { title: "To Do List", url: "#" },
     ],
   },
-  {
-    title: "Models",
-    url: "#",
-    icon: Bot,
-    items: [
-      { title: "Genesis", url: "#" },
-      { title: "Explorer", url: "#" },
-      { title: "Quantum", url: "#" },
-    ],
-  },
+
   {
     title: "Documentation",
     url: "#",
@@ -170,18 +161,19 @@ const navMain = [
       { title: "Introduction", url: "#" },
       { title: "Get Started", url: "#" },
       { title: "Tutorials", url: "#" },
-      { title: "Changelog", url: "#" },
+
     ],
   },
+
   {
     title: "Settings",
     url: "#",
     icon: Settings2,
     items: [
       { title: "General", url: "#" },
-      { title: "Team", url: "#" },
-      { title: "Billing", url: "#" },
-      { title: "Limits", url: "#" },
+      { title: "Theme", url: "#" },
+      
+      { title: "Subscriptions", url: "#" },
     ],
   },
 ];
@@ -189,20 +181,20 @@ const navMain = [
 export function NavMain() {
   return (
      <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Pages</SidebarGroupLabel>
       <SidebarMenu>
         {navMain.map((item) => (
           <SidebarMenuItem key={item.title}>
             <SidebarMenuButton tooltip={item.title}>
               {item.icon && <item.icon />}
-              <span>{item.title}</span>
+              <span className="text-md font-bold">{item.title}</span>
             </SidebarMenuButton>
             <SidebarMenuSub>
               {item.items?.map((subItem) => (
                 <SidebarMenuSubItem key={subItem.title}>
                   <SidebarMenuSubButton asChild>
                     <a href={subItem.url}>
-                      <span>{subItem.title}</span>
+                      <span className="text-sm font-jetsbrain">{subItem.title}</span>
                     </a>
                   </SidebarMenuSubButton>
                 </SidebarMenuSubItem>
