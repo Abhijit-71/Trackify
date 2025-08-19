@@ -34,11 +34,11 @@ function AlertError(){
 
 function AlertInfo() {
   return (
-    <Alert className="top-4 fixed border-cyan-600/50 text-cyan-600 dark:border-cyan-600 bg-blue-500/10 [&>svg]:text-cyan-600 w-[80vw] text-left z-99">
+    <Alert className=" border-cyan-600/50 text-cyan-600 dark:border-cyan-600 bg-blue-500/10 [&>svg]:text-cyan-600 w-[80vw] text-left ">
       <InfoIcon className="h-4 w-4" />
       <AlertTitle>Important Information</AlertTitle>
       <AlertDescription>
-        Make sure to review the recent updates before proceeding.
+       Warning Beta Build , App is under development.
       </AlertDescription>
     </Alert>
   );

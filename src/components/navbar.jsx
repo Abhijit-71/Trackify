@@ -64,7 +64,7 @@ const NavMenu = (NavigationMenuProps) => (
 const Navbar = () => {
   return (
     <div className="bg-muted">
-      <nav className="fixed top-6 inset-x-4 h-16 backdrop-blur-xl backdrop-saturate-100 bg-white/10 border border-white/70 border-opacity-40 dark:border-slate-700/70 max-w-screen-xl mx-auto rounded-full">
+      <nav className="fixed top-6 z-99 inset-x-4 h-16 backdrop-blur-xl backdrop-saturate-100 bg-white/10 border border-white/70 border-opacity-40 dark:border-slate-700/70 max-w-screen-xl mx-auto rounded-full">
         <div className="h-full flex items-center justify-between mx-auto px-4">
           <Logo />
 
